@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/dragon-reviewer/static/css/main.e6c13ad2.css",
+    "main.js": "/dragon-reviewer/static/js/main.1af2916c.js",
+    "static/media/main-them-wallpaper.jpg": "/dragon-reviewer/static/media/main-them-wallpaper.a33836a68c71f9619c6f.jpg",
+    "static/media/bot.png": "/dragon-reviewer/static/media/bot.938e42ea81c5aecdefcd.png",
+    "static/media/logo-img.png": "/dragon-reviewer/static/media/logo-img.3f88342a557d7e3d02aa.png",
+    "static/media/top-left.png": "/dragon-reviewer/static/media/top-left.ff62f29036f4131215b7.png",
+    "static/media/planets.png": "/dragon-reviewer/static/media/planets.5ca9c3d8a2dca041da81.png",
+    "index.html": "/dragon-reviewer/index.html",
+    "main.e6c13ad2.css.map": "/dragon-reviewer/static/css/main.e6c13ad2.css.map",
+    "main.1af2916c.js.map": "/dragon-reviewer/static/js/main.1af2916c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1af2916c.js"
+  ]
+}
