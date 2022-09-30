@@ -6,7 +6,8 @@ import { clearFavorites } from "redux/favoritesSlice";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { IconSVG } from "helpers/IconSvg";
 import { useNavigate } from "react-router-dom";
-
+import { doc, setDoc } from "firebase/firestore"; 
+import db from "../../firebase";
 
 export const UserBar = () => {
     const dispatch = useDispatch(); 
@@ -14,7 +15,16 @@ export const UserBar = () => {
     const { favIds } = useSelector(state => state.favorites)
     const {isAuth, email} = useAuth();
 
-    const hendleLogOut = () => {
+
+    const saveFavoritesHistory = async () => {
+        await setDoc(doc(db, "usersFavorites", email), {
+            email,
+            data: favIds,
+        });
+    }
+
+    const hendleLogOut = async () => {
+        await saveFavoritesHistory();
         dispatch(removeUser());
         dispatch(clearFavorites());
         navigate("/")

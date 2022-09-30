@@ -11,6 +11,7 @@ import { useEffect } from "react";
 export const FavoritesButton = ({itemId, favStatus}) => {
 
     const [ activeStatus, setActiveStatus ] = useState(favStatus);
+    
     const dispatch = useDispatch();
     const { isAuth } = useAuth();
     

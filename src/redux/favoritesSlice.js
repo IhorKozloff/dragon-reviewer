@@ -20,11 +20,14 @@ const favoritesSlice = createSlice({
         },
         clearFavorites (state) {
             state.favIds = []
+        },
+        setHistoryState (state, action) {
+            state.favIds = action.payload;
         }
     }
 });
 
-export const { addOrRemoveFavorites, clearFavorites } = favoritesSlice.actions;
+export const { addOrRemoveFavorites, clearFavorites, setHistoryState } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;
 

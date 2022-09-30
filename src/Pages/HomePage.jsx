@@ -3,17 +3,16 @@ import { Section, Container } from "GlobalStyles";
 
 import { useEffect } from "react";
 
-
 import { fetchMainRocketInfo, fetchMoreRocketsInfo } from "redux/operations";
 import { useDispatch } from "react-redux";
 
+
+
 export const HomePage = () => {
 
-  const dispatch = useDispatch();
- 
-
-
+ const dispatch = useDispatch();
   
+ 
   useEffect(() => {
 
     dispatch(fetchMainRocketInfo());
