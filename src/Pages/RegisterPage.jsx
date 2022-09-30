@@ -1,6 +1,6 @@
 import { Section, Container } from "GlobalStyles";
 import { RegisterForm } from "components";
-
+import Notiflix from 'notiflix';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "redux/authSlice";
@@ -12,9 +12,7 @@ export const RegisterPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleSubmit = ({email, password}) => {
-        console.log(`форма прислала такие данные`, `мыло:`, email, `пароль:`,password);
-        
+    const handleSubmit = ({email, password}) => {       
 
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
@@ -26,7 +24,10 @@ export const RegisterPage = () => {
                 token: user.accessToken
             }))
             navigate("succes")
-        }).catch(console.error)
+        }).catch((error) => {
+            Notiflix.Notify.failure('User with this email already exists');
+            console.log(error.message);
+        })
 
     };
 

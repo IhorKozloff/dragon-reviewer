@@ -13,6 +13,6 @@ export const FooterWrapper = styled.footer`
     }    
 `;
 
-export const Author = styled.span`
+export const Author = styled.a`
     text-decoration: underline;
 `;

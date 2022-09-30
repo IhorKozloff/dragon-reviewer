@@ -2,7 +2,7 @@
   "name": "dragon-reviewer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://IhorKozloff.github.io/dragon-reviewer/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.3",
@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.1",
     "firebase": "^9.10.0",
     "formik": "^2.2.9",
+    "notiflix": "^3.2.5",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.5.0",
@@ -25,7 +26,8 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.6",
     "styled-normalize": "^8.0.7",
-    "web-vitals": "^2.1.3"
+    "web-vitals": "^2.1.3",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

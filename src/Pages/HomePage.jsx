@@ -32,6 +32,7 @@ export const HomePage = () => {
 
       <Section className="more-rocket">
         <Container className="more-rocket__container">
+          <h3 style={{textAlign: "center", marginBottom: "40px", fontWeight: "var(--bold)"}}>See more our developments</h3>
           <MoreRocketsList/>
         </Container>
       </Section>

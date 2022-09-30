@@ -18,11 +18,15 @@ export const RocketsList = styled.ul`
 export const RocketsListItem = styled.li`
     position: relative; 
     
-    border: 1px solid black;
 
     box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    
 
-
+    &:hover {
+        transform: scale(1.01);
+    }
     margin: 20px auto auto auto;
 
     width: 99%;
@@ -47,7 +51,7 @@ export const RocketsListItem = styled.li`
 export const RocketImage = styled.img`
     display: block;
     width: 100%;
-    height: 240px;
+    height: 230px;
 
     @media screen and (min-width: 190px) {
         height: 300px;
@@ -58,7 +62,7 @@ export const RocketImage = styled.img`
     }
 
     @media screen and (min-width: 280px) {
-        height: 398px;
+        height: 360px;
     }
 
     @media screen and (min-width: 768px) {
@@ -73,27 +77,34 @@ export const RocketImage = styled.img`
 
 export const RocketLink = styled(Link)`
     text-decoration: none;
-    color: #000;
+    color: white;
     display: block;
+
     &:hover {
         cursor: pointer;
+        color: white;
     }
+
+    
 `;
 
 export const RocketDescription = styled.div`
-    background-color: aqua;
+    background-image: linear-gradient(to top left, #5D095F, #09395F);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
+
+    font-family: var(--baseFont);
 
     & span {
         dispaly: block;
     }
 `;
 export const RocketDescriptionName = styled.span`
-
+    font-family: var(--secondaryFont);
 `;
 export const RocketDescriptionStatsList = styled.ul`
-
+    padding: 10px;
 `;

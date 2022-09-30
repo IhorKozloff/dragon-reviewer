@@ -9,7 +9,7 @@ export const Footer = () => {
                 <p className="copyright">©  2022 | All Rights Reserved | </p>
                 <p className="developed">
                     Developed by                  
-                    <Author className="company"> Ihor Kozlov</Author>
+                    <Author href="https://github.com/IhorKozloff" target="_blank" className="company"> Ihor Kozlov</Author>
                 </p>
             </Container>
             

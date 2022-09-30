@@ -1,5 +1,5 @@
-import { Formik } from "formik"
-
+import { Formik, ErrorMessage } from "formik"
+import * as yup from 'yup';
 import {  Logo } from 'components';
 import { AuthButton, RedirectButton, AuthFormWrapper, AuthFormInput, FieldsList, FormTitle } from "./AuthForm.styled"
 import { IconSVG } from "helpers/IconSvg";
@@ -15,10 +15,15 @@ export const RegisterForm = ({handleSubmit}) => {
         handleSubmit(values);
         actions.resetForm()
     }
+    const schema = yup.object().shape({
+        name: yup.string(),
+        password: yup.string().min(6).max(16).required(),
+        email: yup.string().email(),
+    });
 
 
     return (
-        <Formik initialValues={initialValues} onSubmit={onSubmitForm}>
+        <Formik initialValues={initialValues} onSubmit={onSubmitForm} validationSchema={schema}>
             
             <AuthFormWrapper className='register-form'>
                 <Logo/>
@@ -27,10 +32,12 @@ export const RegisterForm = ({handleSubmit}) => {
                     <li>
                         <IconSVG id="form-email-icon"/>
                         <AuthFormInput className="register-form__email" name="email" type="email" placeholder="Email"/>
+                        <ErrorMessage name="email"/>
                     </li>
                     <li>
                         <IconSVG id="form-password-icon"/>
                         <AuthFormInput className="register-form__password" name="password" type="text" placeholder="Password"/>
+                        <ErrorMessage name="password"/>
                     </li>
                     
                     <li>

@@ -5,7 +5,7 @@ export const Section = styled.section`
     //background-image: url('${mainThemeWallpaper}');
     background-repeat: no-repeat;
     backgroun-size: cover;
-    background-color: pink;
+    //background-color: var(--background-light-grey);
     padding-top: 60px;
     padding-bottom: 60px;
 `;
@@ -13,7 +13,6 @@ export const Section = styled.section`
 export const Container = styled.div`
     margin: 0 auto;
     width: 100%;
-    background-color: var(--background-light-grey);
     box-sizing: border-box;
     
     @media screen and (min-width: 320px) {

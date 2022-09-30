@@ -2,7 +2,7 @@ import { Section, Container } from "GlobalStyles";
 import { LoginForm } from "components";
 import { useDispatch } from "react-redux";
 import { setUser } from "redux/authSlice";
-
+import Notiflix from 'notiflix';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,12 @@ export const LoginPage = () => {
                 token: user.accessToken
             }))
             navigate("/")
-        }).catch(console.error)
+        }).catch( error => {
+            console.log(error.message)
+            Notiflix.Notify.failure('There is no user with this email or password');
+        })
+        
+            
         
     };
 

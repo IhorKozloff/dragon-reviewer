@@ -20,13 +20,13 @@ export const MoreRocketsList = () => {
                                     <RocketDescriptionName className="description__name">{name}</RocketDescriptionName>
                                     <RocketDescriptionStatsList>
                                         <li>
-                                            Height:{height.meters}
+                                            Height:{height.meters}m.
                                         </li>
                                         <li>
-                                            Mass: {mass}
+                                            Mass: {mass}kg.
                                         </li>
                                         <li>
-                                            Year: {year}
+                                            Year: {year.slice(0, 4)}
                                         </li>
                                     
                                     </RocketDescriptionStatsList>
