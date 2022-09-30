@@ -13,7 +13,13 @@ export const MoreRocketsList = () => {
                     
                     return (
                         <RocketsListItem key={id} className="rockets-list__item item">
-                            <RocketLink to={`/more/${id}`}>
+                            <RocketLink to={`/more/${id}`} onClick={() => {
+                                   window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: "smooth",
+                                  });
+                            }}>
                                 <RocketImage className="item__image" src={imageLink} alt="space rocket"/>
 
                                 <RocketDescription className="item__description description">
