@@ -5,7 +5,7 @@ import { FavoritesButton } from "components";
 export const MoreRocketsList = () => {
 
     const {moreRocketsData} = useSelector((state) => state.otherData);
-    const {favIds} = useSelector((state) => state.favorites)
+    
 
     return (
             <RocketsList className="more-rockets__wrapper rockets-list">
@@ -41,7 +41,7 @@ export const MoreRocketsList = () => {
                             </RocketLink>
                            
                             
-                            <FavoritesButton itemId={id} favStatus={favIds.includes(id)}/>
+                            <FavoritesButton itemId={id}/>
 
                         </RocketsListItem>
                     )

@@ -11,7 +11,6 @@ export const FavoritesPage = () => {
     return (
         <Section className="favorites">
             <Container className="favorites__container">
-                <h3 style={{textAlign: "center", margin: "20px 0"}}>Here you can view or delete your favorites.</h3>
                 <FavoriteList data={dataToRender}/>
             </Container>
         </Section>

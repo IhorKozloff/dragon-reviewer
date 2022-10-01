@@ -23,14 +23,37 @@ export const LogOutButton = styled.button`
     }
 `;
 export const UserEmail = styled.div`
+    
     color: grey;
     cursor: pointer;
     font-weight: var(--bold);
+
     &:hover {
-        color: black;
+        & a {
+            color: black;
+        }
+        & svg {
+           opacity: 0.8;
+        }
+
+    }
+
+    & a {
+        color: grey;
+    }
+    & svg {
+        width: 30px;
+        height: 30px;
+        color: green;
     }
 `
-export const WishlistLinkWrapper = styled.div``;
+export const WishlistLinkWrapper = styled.div`
+    &:hover {
+        & svg {
+            opacity: 0.8;
+        }
+    }
+`;
 
 export const WishlistLink = styled(Link)`
     position: relative;

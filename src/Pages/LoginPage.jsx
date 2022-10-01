@@ -38,7 +38,7 @@ export const LoginPage = () => {
     
 
     const handleSubmit = ({email, password}) => {
-        console.log(`форма прислала такие данные`, `мыло:`, email, `пароль:`,password);
+
 
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password).then(({user}) => {
@@ -48,9 +48,9 @@ export const LoginPage = () => {
                 id: user.uid,
                 token: user.accessToken
             }))
-
-            navigate("/");
             setFavoritesHistory(user.email);
+            navigate("/");
+            
 
         }).catch( error => {
             console.log(error.message)

@@ -23,6 +23,7 @@ export const HomePage = () => {
 
   return (
     <>
+
       <Section className="rocket-details">
         <Container className="rocket-details__container">
           <MainRocketBar/>

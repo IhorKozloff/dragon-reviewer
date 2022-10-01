@@ -24,7 +24,7 @@ export const FavoritesButtonWrapper = styled.div`
         background-color: white;
         border-radius: 50%;
         pointer-events:${props => props.isAuth === true ? "all" : "none"};
-        border:${props => props.activeStatus === true ? "1px solid orange" : "1px solid var(--gray)"};
+        border:${props => props.activeStatus === 'enabled' ? "1px solid orange" : "1px solid var(--gray)"};
         
         display: flex;
         justify-content: center;

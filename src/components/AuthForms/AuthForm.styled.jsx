@@ -109,6 +109,21 @@ export const RedirectButton = styled(Link)`
         transform: scale(0.9);
     }
 `;
+export const CancelButton = styled.button`
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--active-blue);
+    border: 1px solid var(--active-blue);
+    border-radius: 20px;
+
+    &:active {
+        transform: scale(0.9);
+    }
+`;
 export const FormTitle = styled.p`
     margin-top: 40px;
     font-family: var(--secondaryFont);
@@ -116,3 +131,15 @@ export const FormTitle = styled.p`
     font-weight: var(--bold);
 `;
 
+export const FormBackDrop = styled.div`
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.85), rgba(47, 48, 58, 0.85));
+`;

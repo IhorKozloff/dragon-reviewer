@@ -49,7 +49,7 @@ export const RocketDetails = ({loaderStatus = false, dataToRender}) => {
                 <RocketDescriptionTextWrapper>
                     <p>{description}</p>
                 </RocketDescriptionTextWrapper>
-                <RocketWikiLink href={wikipedia}>visit the original source for more advanced information</RocketWikiLink>
+                <RocketWikiLink href={wikipedia} target="_blank">visit the original source for more advanced information</RocketWikiLink>
                 
 
                 <StatsTittle>Main parameters and technical characteristics</StatsTittle>

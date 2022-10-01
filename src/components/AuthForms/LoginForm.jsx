@@ -1,7 +1,7 @@
 import { Formik, ErrorMessage } from "formik"
 import * as yup from 'yup';
 import {  Logo } from 'components';
-import { AuthButton, RedirectButton, AuthFormWrapper, AuthFormInput, FieldsList, FormTitle } from "./AuthForm.styled"
+import { AuthButton, RedirectButton, AuthFormWrapper, AuthFormInput, FieldsList, FormTitle } from "./AuthForm.styled";
 import { IconSVG } from "helpers/IconSvg";
 
 export const LoginForm = ({handleSubmit}) => {
@@ -17,7 +17,7 @@ export const LoginForm = ({handleSubmit}) => {
     }
     const schema = yup.object().shape({
         password: yup.string().min(6).max(16).required(),
-        email: yup.string().email(),
+        email: yup.string().email().required(),
     });
 
     return (

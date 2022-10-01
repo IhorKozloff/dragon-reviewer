@@ -1,4 +1,9 @@
-import { FavoriteListWrapper, DesctopPlug, FavoriteListItem, FavoriteLink, FavoriteImage, FavoriteDescription, FavoriteDescriptionName, FavoriteDescriptionStatsList, RemoveButton} from "./FavoriteList.styled";
+import { 
+    FavoriteListTittle, DesctopPlug, 
+    FavoriteListItem, FavoriteLink, FavoriteImage, FavoriteDescription, 
+    FavoriteDescriptionName, FavoriteDescriptionStatsList, RemoveButton
+} from "./FavoriteList.styled";
+
 import { MdDeleteForever } from "react-icons/md"
 import { TbArrowAutofitHeight } from "react-icons/tb";
 import { GiWeight } from "react-icons/gi";
@@ -18,11 +23,12 @@ export const FavoriteList = ({data = []}) => {
 
     return (
         <>
-        <FavoriteListWrapper>
+        {data.length !== 0 && <FavoriteListTittle>Here you can view or delete your favorites.</FavoriteListTittle>}
+        <ul className="rockets-list">
             {data.length !== 0 && data.map(({id, flickr_images: imageLink, height_w_trunk: height, dry_mass_kg: mass, first_flight: year, name}) => {
                     return (
                         <FavoriteListItem key={id} className="rockets-list__item item">
-                            <FavoriteLink to={`/more/${id}`}>
+                            <FavoriteLink to={`/more/${id}`} className="item__link">
 
                                 <div className="thumb">
                                     <FavoriteImage className="item__image" src={imageLink} alt="space rocket"/>
@@ -31,7 +37,7 @@ export const FavoriteList = ({data = []}) => {
 
                                 <FavoriteDescription className="item__description description">
                                     <FavoriteDescriptionName className="description__name">{name}</FavoriteDescriptionName>
-                                    <FavoriteDescriptionStatsList>
+                                    <FavoriteDescriptionStatsList className="description__stats-list">
                                         <li>
                                             <TbArrowAutofitHeight className="stat-icon"/>
                                             <span className="stat-title">Height:</span>
@@ -65,7 +71,7 @@ export const FavoriteList = ({data = []}) => {
                 })
             }
             
-        </FavoriteListWrapper>
+        </ul>
 
         {data.length === 0 && <DesctopPlug><span>There is nothing in</span><span> favorites yet.</span></DesctopPlug>}
         </>

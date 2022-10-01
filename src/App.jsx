@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "routes/privateRoutes";
 import PublicRoute from "routes/publicRoutes";
-import { Layout, HomePage, OtherRocketDetailsPage, LoginPage, RegisterPage, RegisterSucces, FavoritesPage, ErrorPage } from "Pages";
+import { Layout, HomePage, OtherRocketDetailsPage, LoginPage, RegisterPage, FavoritesPage, ErrorPage, UserProfilePage } from "Pages";
 
 
 
@@ -47,17 +47,19 @@ export const App = () => {
             </PublicRoute>
           }
         />
+        <Route path="*" element={<ErrorPage />} />
+
         <Route 
-          path='register/succes' 
+          path='profile'
           element={
-            <PublicRoute >
-              <RegisterSucces/>
-            </PublicRoute>
+            <PrivateRoute >
+              <UserProfilePage/>
+            </PrivateRoute>
           }
         />
-        <Route path="*" element={<ErrorPage />} />
       </Route>
 
+      
       
     </Routes>
 

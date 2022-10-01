@@ -10,7 +10,11 @@ import bot from "img/favorite-wallpaper/bot.png";
 import hatch from "img/favorite-wallpaper/Decore 1.png";
 
 
-
+export const FavoriteListTittle = styled.h3`
+    text-align: center;
+    margin: 20px 0;
+    font-family: var(--secondaryFont);
+`;
 export const FavoriteListWrapper = styled.ul``;
 
 export const DesctopPlug = styled.div`

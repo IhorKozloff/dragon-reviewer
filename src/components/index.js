@@ -12,3 +12,4 @@ export * from "./AuthForms/RegisterForm";
 export * from "./FavoritesButton/FavoritesButton"
 export * from "./UserBar/UserBar";
 export * from "./FavoriteList/FavoriteList";
+export * from "./UsersPersonalData/UsersPersonalData";

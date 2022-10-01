@@ -1,39 +1,59 @@
 import { BsStar, BsStarFill } from "react-icons/bs"
 import { FavoritesButtonWrapper, UnAuthrizedTooltipWrapper, UnAuthrizedTooltip, Triangle, TolltipLink } from "./FavoritesButton.styled";
 import { useState } from "react"
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addOrRemoveFavorites } from "redux/favoritesSlice";
 import { useAuth } from "hooks/useAuth";
 import { useEffect } from "react";
 
 
 
-export const FavoritesButton = ({itemId, favStatus}) => {
-
-    const [ activeStatus, setActiveStatus ] = useState(favStatus);
-    
+export const FavoritesButton = ({itemId}) => {
     const dispatch = useDispatch();
     const { isAuth } = useAuth();
+    const {favIds} = useSelector((state) => state.favorites);
     
+    const [ activeStatus, setActiveStatus ] = useState('disabled');
+
+    
+   
+
     const hendleFavoritesButton = () => {
 
-        console.log('favorites button clicked');
-        setActiveStatus(!activeStatus);
+        if (favIds.includes(itemId)) {
+            setActiveStatus('disabled');
+        } else {
+            setActiveStatus('enabled');
+        }
+
         dispatch(addOrRemoveFavorites(itemId))
     }
 
     useEffect(() => {
         if (isAuth === false) {
-            setActiveStatus(false)
+            setActiveStatus('disabled')
+        } 
+        
+    },[isAuth]);
+
+    useEffect(() => {
+        if (favIds.includes(itemId)) {
+            setActiveStatus('enabled')
+        } else { 
+            setActiveStatus('disabled')
         }
-    },[isAuth])
+        
+    },[favIds, itemId]);
+
+
+
 
     return (
         <FavoritesButtonWrapper activeStatus={activeStatus} isAuth={isAuth} className="favorites-button-wrapper">
             <button type="button" onClick={hendleFavoritesButton}>
-                {activeStatus === false && <BsStar className="disabled-icon"/>}
+                {activeStatus === "disabled" && <BsStar className="disabled-icon"/>}
                 
-                {activeStatus === true && <BsStarFill className="enabled-icon"/>}
+                {activeStatus === 'enabled' && <BsStarFill className="enabled-icon"/>}
             </button>
             <UnAuthrizedTooltipWrapper className="un-authrized-tooltip">
                 <UnAuthrizedTooltip>

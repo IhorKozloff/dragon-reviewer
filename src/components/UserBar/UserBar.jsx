@@ -1,13 +1,21 @@
 import { UserBarWrapper, LogOutButton, UserEmail, WishlistLinkWrapper, WishlistLink, WishlistCount } from "./UserBar.styled";
+
 import { useAuth } from "hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "redux/authSlice";
 import { clearFavorites } from "redux/favoritesSlice";
+
 import { BsStar, BsStarFill } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
 import { IconSVG } from "helpers/IconSvg";
-import { useNavigate } from "react-router-dom";
+import Media from 'react-media';
+
+import { useNavigate, Link } from "react-router-dom";
+
 import { doc, setDoc } from "firebase/firestore"; 
 import db from "../../firebase";
+
+
 
 export const UserBar = () => {
     const dispatch = useDispatch(); 
@@ -35,12 +43,27 @@ export const UserBar = () => {
             {isAuth === true &&
             <UserBarWrapper >
                 <li>
-                    <UserEmail title="Go to personal account">{email}</UserEmail>
+                    <UserEmail title="Go to personal account">
+                        <Link to="profile">
+
+                            <Media query="(max-width: 767px)" render={() =>
+                                (
+                                    <FaUserCircle/>
+                                )}
+                            />
+                            <Media query="(min-width: 768px)" render={() =>
+                                (<>{email}</>
+                                
+                                )}
+                            />
+                        </Link>
+                    </UserEmail>
                 </li>
 
 
                 <li>
-                    {favIds.length === 0 && <WishlistLinkWrapper title="Go to favorites">
+                    {favIds.length === 0 && 
+                    <WishlistLinkWrapper title="Go to favorites">
                         <WishlistLink to={"wishlist"}>
                             <BsStar/>
                         </WishlistLink>
