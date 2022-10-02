@@ -13,7 +13,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import db from "../firebase";
 import { getDocs, collection } from "firebase/firestore";
-import { setHistoryState } from "redux/favoritesSlice";
+import { setHistoryState, setAvatar } from "redux/favoritesSlice";
 
 export default function LoginPage () {
 
@@ -27,6 +27,7 @@ export default function LoginPage () {
         querySnapshot.forEach((doc) => {
     
             if (doc.data().email === email) {
+                dispatch(setAvatar(doc.data().avatar))
                 dispatch(setHistoryState(doc.data().data))
             }
         })

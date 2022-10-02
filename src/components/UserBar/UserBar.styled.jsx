@@ -27,6 +27,7 @@ export const UserEmail = styled.div`
     color: grey;
     cursor: pointer;
     font-weight: var(--bold);
+    
 
     &:hover {
         & a {
@@ -40,6 +41,8 @@ export const UserEmail = styled.div`
 
     & a {
         color: grey;
+        display: flex;
+        align-items: center;
     }
     & svg {
         width: 30px;
@@ -88,4 +91,18 @@ export const WishlistCount = styled.div`
     text-align: center;
     font-size: 8px;
     font-weight: var(--bold);
+`;
+export const UserAvatar = styled.div`
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    & img {
+        display: block;
+        height: 100%;
+        width: 100%;
+      
+        object-fit: cover;
+    }
 `;

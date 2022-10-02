@@ -37,6 +37,7 @@ export const ChangeEmailFormWrapper = styled.div`
     @media screen and (min-width: 768px) {
         width: 320px;
     }
+  
 `;
 export const ChangeButton = styled.button`
 
@@ -80,6 +81,7 @@ export const UserInfo = styled.div`
     align-items: center;
     border-radius: 10px;
     padding: 20px;
+    
     & span {
         font-family: var(--secondaryFont);
         font-size: 14px;
@@ -87,11 +89,40 @@ export const UserInfo = styled.div`
     }
 `;
 export const AvatarWrapper = styled.div`
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     & svg {
-        width: 120px;
-        height: 120px;
+        width: 220px;
+        height: 220px;
         margin-bottom: 10px;
     }
+    & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &:hover {
+        &::after {
+            content: 'change avatar';
+            
+            width: 100px;
+            height: 30px;
+            background-color: green;
+            position: absolute;
+            bot: 0;
+            left: 53px;
+            border-radius: 5px;
+        }
+    }
+   
 `;
 export const ButtonSet = styled.ul`
     background-color: var(--background-gray);

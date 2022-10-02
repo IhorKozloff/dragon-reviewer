@@ -4,7 +4,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const favoritesSlice = createSlice({
     name: 'favorites',
 
-    initialState: {favIds: []},
+    initialState: {
+        favIds: [],
+        avatarId: ''
+    },
 
     reducers: {
 
@@ -23,11 +26,17 @@ const favoritesSlice = createSlice({
         },
         setHistoryState (state, action) {
             state.favIds = action.payload;
+        },
+        setAvatar (state, action) {
+            state.avatarId = action.payload;
+        },
+        clearAvatar (state) {
+            state.avatarId = ''
         }
     }
 });
 
-export const { addOrRemoveFavorites, clearFavorites, setHistoryState } = favoritesSlice.actions;
+export const { addOrRemoveFavorites, clearFavorites, setHistoryState, setAvatar, clearAvatar } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;
 

@@ -3,7 +3,7 @@ import { ModalWindowBackdrop } from "components";
 import { AvatarList, AvatarListItem, AvatarImgThumb, CloseButton } from "./AvatarSet.styled"
 import { GrClose } from "react-icons/gr"
 
-export const AvatarSet = ({actionOnClick}) => {
+export const AvatarSet = ({actionOnClick, onCloseClick}) => {
 
     const onItemClick = (event) => {
         const data = event.currentTarget.dataset.avatarid
@@ -26,7 +26,7 @@ export const AvatarSet = ({actionOnClick}) => {
                     
                 )
             })}
-            <CloseButton>
+            <CloseButton onClick={onCloseClick}>
                 <GrClose/>
             </CloseButton>
         </AvatarList>

@@ -1,9 +1,9 @@
-import { UserBarWrapper, LogOutButton, UserEmail, WishlistLinkWrapper, WishlistLink, WishlistCount } from "./UserBar.styled";
+import { UserBarWrapper, LogOutButton, UserEmail, WishlistLinkWrapper, WishlistLink, WishlistCount, UserAvatar } from "./UserBar.styled";
 
 import { useAuth } from "hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "redux/authSlice";
-import { clearFavorites } from "redux/favoritesSlice";
+import { clearFavorites, clearAvatar } from "redux/favoritesSlice";
 
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
@@ -15,12 +15,13 @@ import { useNavigate, Link } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore"; 
 import db from "../../firebase";
 
-
+import { getAvatarLinkById } from "helpers/getAvatarById";
 
 export const UserBar = () => {
     const dispatch = useDispatch(); 
     const navigate = useNavigate();
-    const { favIds } = useSelector(state => state.favorites)
+
+    const { favIds, avatarId } = useSelector(state => state.favorites);
     const {isAuth, email} = useAuth();
 
 
@@ -28,12 +29,14 @@ export const UserBar = () => {
         await setDoc(doc(db, "usersFavorites", email), {
             email,
             data: favIds,
+            avatar: avatarId
         });
     }
 
     const hendleLogOut = async () => {
         await saveFavoritesHistory();
         dispatch(removeUser());
+        dispatch(clearAvatar())
         dispatch(clearFavorites());
         navigate("/")
     }
@@ -46,11 +49,13 @@ export const UserBar = () => {
                     <UserEmail title="Go to personal account">
                         <Link to="profile">
 
-                            <Media query="(max-width: 767px)" render={() =>
-                                (
-                                    <FaUserCircle/>
-                                )}
-                            />
+                            {avatarId === '' && <FaUserCircle/>}
+                            
+                            {avatarId !== '' && <UserAvatar>
+                                <img src={`${getAvatarLinkById(avatarId)}`} alt='avengers avatar icon'/>
+                            </UserAvatar>}
+                            
+                            
                             <Media query="(min-width: 768px)" render={() =>
                                 (<>{email}</>
                                 

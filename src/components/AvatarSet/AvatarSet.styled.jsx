@@ -5,7 +5,7 @@ export const AvatarList = styled.ul`
     background-color: white;
     display: flex;
     flex-flow: row wrap;
-    padding: 40px;
+    padding: 40px 20px 20px 20px;
     border-radius: 20px;
     width: 280px;
     justify-content: center;
@@ -14,6 +14,9 @@ export const AvatarList = styled.ul`
 
     @media screen and (min-width: 768px) {
         width: 420px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 800px;
     }
 `;
 export const AvatarListItem = styled.li`
@@ -39,6 +42,10 @@ export const AvatarImgThumb = styled.div`
     @media screen and (min-width: 768px) {
         width: 100px;
         height: 100px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 200px;
+        height: 200px;
     }
 `
 

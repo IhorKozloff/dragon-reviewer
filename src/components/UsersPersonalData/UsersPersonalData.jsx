@@ -8,11 +8,12 @@ import { ChangeEmailForm, ChangePasswordForm, ConfirmPasswordForm } from "compon
 import { useState } from "react";
 import { getAuth, updateEmail, EmailAuthProvider, reauthenticateWithCredential, updatePassword, } from "firebase/auth";
 import { changeEmail } from "redux/authSlice";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
 import Notiflix from 'notiflix';
 import { AvatarSet } from "components";
-
+import { setAvatar } from "redux/favoritesSlice";
+import { getAvatarLinkById } from "helpers/getAvatarById";
 
 
 
@@ -20,6 +21,7 @@ import { AvatarSet } from "components";
 export const UsersPersonalData = () => {
     const dispatch = useDispatch();
     const { email } = useAuth();
+    const { avatarId } = useSelector(state => state.favorites);
 
     const [currentOptionActivated, setCurrentOptionActivated] = useState('');
 
@@ -91,12 +93,17 @@ export const UsersPersonalData = () => {
             Notiflix.Notify.failure('You entered the wrong password');
         })
     }
-
+    const hendleSetAvatar = (data) => {
+        console.log(data)
+        dispatch(setAvatar(data))
+        setAvatarSetStatus(false)
+    }
     const closeForm = () => {
         setEmailFormStatus(false);
         setConfirmPasswordFormStatus(false);
         setNewPasswordFormStatut(false);
         setCurrentOptionActivated('')
+        setAvatarSetStatus(false)
     }
 
     return (
@@ -105,18 +112,35 @@ export const UsersPersonalData = () => {
         <PersonalBar>
             <UserInfo>
 
-                <AvatarWrapper onClick={() => {
-                    setAvatarSetStatus(true)
-                }}>
-                    <FaUserCircle/>
+                <AvatarWrapper>
+                    {avatarId !== '' && 
+                    
+                        <img src={`${getAvatarLinkById(avatarId)}`} alt='avengers avatar icon'/>
+                    }
+                    {avatarId === '' && <FaUserCircle/>}
                 </AvatarWrapper>
 
                 
                 <span className="personal__value">{email}</span>
+                
             </UserInfo>
             
             
             <ButtonSet className="button-set"> 
+                <li>
+
+                    {avatarId === '' && <ChangeButton type="button" className="button-set__set-avatar" onClick={() => {
+                        setAvatarSetStatus(true);
+                    }}>Change avatar</ChangeButton>}
+
+                </li>
+                <li>
+
+                {avatarId !== '' && <ChangeButton type="button" className="button-set__set-default-avatar" onClick={() => {
+                        dispatch(setAvatar(''));
+                    }}>Set default avatar</ChangeButton>}
+
+                </li>
                 <li>
 
                     <ChangeButton type="button" className="button-set__change-email-btn" onClick={() => {
@@ -133,6 +157,8 @@ export const UsersPersonalData = () => {
                         setCurrentOptionActivated('change-password');
                     }}>Change password</ChangeButton>
                 </li>
+
+            
             </ButtonSet>
             
             
@@ -145,7 +171,7 @@ export const UsersPersonalData = () => {
         {emailFormStatus === true && <ChangeEmailForm hendleChangeEmail={hendleChangeEmail} closeForm={closeForm}/>}
         {newPasswordFormStatut === true && <ChangePasswordForm hendleChangePassword={hendleChangePassword} closeForm={closeForm}/>}
         {confirmPasswordFormStatus === true && <ConfirmPasswordForm hendleConfirmData={hendleConfirmData} closeForm={closeForm}/>}
-        {avatarSetStatus === true && <AvatarSet/>}
+        {avatarSetStatus === true && <AvatarSet actionOnClick={hendleSetAvatar} onCloseClick={closeForm}/>}
     </PersonalWrapper>
     )
 }
