@@ -11,6 +11,7 @@ import { changeEmail } from "redux/authSlice";
 import { useDispatch } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
 import Notiflix from 'notiflix';
+import { AvatarSet } from "components";
 
 
 
@@ -24,7 +25,9 @@ export const UsersPersonalData = () => {
 
     const [emailFormStatus, setEmailFormStatus] = useState(false);
     const [newPasswordFormStatut, setNewPasswordFormStatut] = useState(false);
-    const [confirmPasswordFormStatus, setConfirmPasswordFormStatus] = useState(false)
+    const [confirmPasswordFormStatus, setConfirmPasswordFormStatus] = useState(false);
+
+    const [avatarSetStatus, setAvatarSetStatus] = useState(false)
 
     const auth = getAuth();
     
@@ -102,7 +105,9 @@ export const UsersPersonalData = () => {
         <PersonalBar>
             <UserInfo>
 
-                <AvatarWrapper>
+                <AvatarWrapper onClick={() => {
+                    setAvatarSetStatus(true)
+                }}>
                     <FaUserCircle/>
                 </AvatarWrapper>
 
@@ -140,6 +145,7 @@ export const UsersPersonalData = () => {
         {emailFormStatus === true && <ChangeEmailForm hendleChangeEmail={hendleChangeEmail} closeForm={closeForm}/>}
         {newPasswordFormStatut === true && <ChangePasswordForm hendleChangePassword={hendleChangePassword} closeForm={closeForm}/>}
         {confirmPasswordFormStatus === true && <ConfirmPasswordForm hendleConfirmData={hendleConfirmData} closeForm={closeForm}/>}
+        {avatarSetStatus === true && <AvatarSet/>}
     </PersonalWrapper>
     )
 }
