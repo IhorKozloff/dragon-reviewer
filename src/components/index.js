@@ -13,3 +13,4 @@ export * from "./FavoritesButton/FavoritesButton"
 export * from "./UserBar/UserBar";
 export * from "./FavoriteList/FavoriteList";
 export * from "./UsersPersonalData/UsersPersonalData";
+export * from "./ModalWindowBackdrop/ModalWindowBackdrop";

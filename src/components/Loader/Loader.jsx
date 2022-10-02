@@ -1,14 +1,13 @@
-import { createPortal } from "react-dom";
-import { RocketDetailsBackDrop } from "./Loader.styled";
+import { ModalWindowBackdrop } from "components";
 import { Vortex } from 'react-loader-spinner';
 
-export const Loader = () => {
+export const Loader = ({theme}) => {
 
-    const loaderBackdropRoot = document.querySelector('#loader-backdrop-root');
 
-    return createPortal(
 
-        <RocketDetailsBackDrop className="rocket-details__wrapper">
+    return (
+
+        <ModalWindowBackdrop theme={theme}>
             <Vortex
                 visible={true}
                 height="80"
@@ -18,6 +17,6 @@ export const Loader = () => {
                 wrapperClass="vortex-wrapper"
                 colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
             />
-        </RocketDetailsBackDrop>, loaderBackdropRoot
+        </ModalWindowBackdrop>
     )
 }

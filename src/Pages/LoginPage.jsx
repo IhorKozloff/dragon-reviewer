@@ -15,7 +15,7 @@ import db from "../firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { setHistoryState } from "redux/favoritesSlice";
 
-export const LoginPage = () => {
+export default function LoginPage () {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -26,11 +26,7 @@ export const LoginPage = () => {
 
         querySnapshot.forEach((doc) => {
     
-            console.log('fore each iteration/////////////////////////////');
-            console.log(doc.data());
-    
             if (doc.data().email === email) {
-                console.log('Засадить дату в редакс');
                 dispatch(setHistoryState(doc.data().data))
             }
         })
@@ -42,7 +38,7 @@ export const LoginPage = () => {
 
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password).then(({user}) => {
-            console.log(user);
+
             dispatch(setUser({
                 email: user.email,
                 id: user.uid,

@@ -1,7 +1,7 @@
 import { OtherRocketBar, MoreRocketsList } from "components";
 import { Section, Container } from "GlobalStyles";
 
-export const OtherRocketDetailsPage = () => {
+export default function OtherRocketDetailsPage () {
 
 
     return (

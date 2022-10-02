@@ -38,6 +38,7 @@ export const FieldsList = styled.ul`
     margin-top: 60px;
     margin-bottom: 40px;
     width: 100%;
+    
     & li {
         position: relative;
         border-bottom: 1px solid var(--light-gray);
@@ -126,20 +127,16 @@ export const CancelButton = styled.button`
 `;
 export const FormTitle = styled.p`
     margin-top: 40px;
+    text-align: center;
     font-family: var(--secondaryFont);
     font-size: 20px;
     font-weight: var(--bold);
 `;
 
-export const FormBackDrop = styled.div`
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 1002;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.85), rgba(47, 48, 58, 0.85));
+export const ErrorContent = styled.div`
+    color: red;
+    opacity: 0.8;
+    position: absolute;
+    top: 30px;
+    right: 0;
 `;

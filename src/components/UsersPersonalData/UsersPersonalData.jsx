@@ -4,9 +4,9 @@ import {
     PersonalArea, ChangeButton, AvatarWrapper, UserInfo,
     ButtonSet
 } from "./UsersPersonalData.styled";
-import { ChangeEmailForm, ConfirmPasswordForm } from "components/AuthForms";
+import { ChangeEmailForm, ChangePasswordForm, ConfirmPasswordForm } from "components/AuthForms";
 import { useState } from "react";
-import { getAuth, updateEmail, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
+import { getAuth, updateEmail, EmailAuthProvider, reauthenticateWithCredential, updatePassword, } from "firebase/auth";
 import { changeEmail } from "redux/authSlice";
 import { useDispatch } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
@@ -19,7 +19,11 @@ import Notiflix from 'notiflix';
 export const UsersPersonalData = () => {
     const dispatch = useDispatch();
     const { email } = useAuth();
+
+    const [currentOptionActivated, setCurrentOptionActivated] = useState('');
+
     const [emailFormStatus, setEmailFormStatus] = useState(false);
+    const [newPasswordFormStatut, setNewPasswordFormStatut] = useState(false);
     const [confirmPasswordFormStatus, setConfirmPasswordFormStatus] = useState(false)
 
     const auth = getAuth();
@@ -38,9 +42,22 @@ export const UsersPersonalData = () => {
         });
  
     }
+    const hendleChangePassword = (data) => {
+        const user = auth.currentUser;
+        const newPassword = data;
+
+        updatePassword(user, newPassword).then(() => {
+            Notiflix.Notify.success('Password changed successfully');
+            setNewPasswordFormStatut(false)
+        }).catch((error) => {
+            Notiflix.Notify.failure(error.message);
+        });
+      
+
+    }
 
     const hendleConfirmData = async ({password}) => {
-        setConfirmPasswordFormStatus(false);
+        
         const user = auth.currentUser;
         const userProvidedPassword = password;
 
@@ -51,16 +68,32 @@ export const UsersPersonalData = () => {
 
         reauthenticateWithCredential(user, credential).then(() => {
             console.log('User re-authenticated');
-            setEmailFormStatus(true);
-            Notiflix.Notify.success('Login confirmed');
+            Notiflix.Notify.success('Password confirmed');
+
+            if (currentOptionActivated === 'change-email') {
+                setConfirmPasswordFormStatus(false);
+                setEmailFormStatus(true);
+                setCurrentOptionActivated('')
+                return
+            }
+            if (currentOptionActivated === 'change-password') {
+                setConfirmPasswordFormStatus(false);
+                setNewPasswordFormStatut(true);
+                setCurrentOptionActivated('');
+                return
+            }
+            
+            
           }).catch((error) => {
             Notiflix.Notify.failure('You entered the wrong password');
         })
     }
 
-    const cancelForm = () => {
+    const closeForm = () => {
         setEmailFormStatus(false);
         setConfirmPasswordFormStatus(false);
+        setNewPasswordFormStatut(false);
+        setCurrentOptionActivated('')
     }
 
     return (
@@ -79,17 +112,21 @@ export const UsersPersonalData = () => {
             
             
             <ButtonSet className="button-set"> 
-                <li >
+                <li>
 
-                    <ChangeButton type="button" onClick={() => {
-                        setConfirmPasswordFormStatus(true)
+                    <ChangeButton type="button" className="button-set__change-email-btn" onClick={() => {
+                        setConfirmPasswordFormStatus(true);
+                        setCurrentOptionActivated('change-email');
                     }}>Change email</ChangeButton>
 
                 </li>
 
-                <li className="personal-password">
+                <li>
 
-                    <ChangeButton type="button">Change password</ChangeButton>
+                    <ChangeButton type="button" className="button-set__change-password-btn" onClick={() => {
+                        setConfirmPasswordFormStatus(true);
+                        setCurrentOptionActivated('change-password');
+                    }}>Change password</ChangeButton>
                 </li>
             </ButtonSet>
             
@@ -100,17 +137,9 @@ export const UsersPersonalData = () => {
             
             
         </PersonalArea>
-        {emailFormStatus === true &&
-            <>
-               
-                <ChangeEmailForm hendleChangeEmail={hendleChangeEmail} cancelForm={cancelForm}/>
-
-                <button type="button" onClick={() => {
-                    setEmailFormStatus(false)
-                }}>Cancel</button>
-            </>
-        }
-        {confirmPasswordFormStatus === true && <ConfirmPasswordForm hendleConfirmData={hendleConfirmData} cancelForm={cancelForm}/>}
+        {emailFormStatus === true && <ChangeEmailForm hendleChangeEmail={hendleChangeEmail} closeForm={closeForm}/>}
+        {newPasswordFormStatut === true && <ChangePasswordForm hendleChangePassword={hendleChangePassword} closeForm={closeForm}/>}
+        {confirmPasswordFormStatus === true && <ConfirmPasswordForm hendleConfirmData={hendleConfirmData} closeForm={closeForm}/>}
     </PersonalWrapper>
     )
 }

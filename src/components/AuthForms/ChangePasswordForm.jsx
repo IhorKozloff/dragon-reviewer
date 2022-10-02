@@ -5,31 +5,30 @@ import { IconSVG } from "helpers/IconSvg";
 import { Section, Container } from "GlobalStyles";
 import { ModalWindowBackdrop } from "components";
 
-export const ConfirmPasswordForm = ({hendleConfirmData, closeForm}) => {
+export const ChangePasswordForm = ({hendleChangePassword, closeForm}) => {
 
     const initialValues = {
         password:''
-    }
+    };
 
-    const onSubmitForm = (values, actions) => {
-        hendleConfirmData(values)
-        actions.resetForm()
-    }
+    const onSubmitForm = ({password}, actions) => {
+        hendleChangePassword(password);
+        actions.resetForm();
+    };
     const schema = yup.object().shape({
         password: yup.string().min(6).max(16).required(),
     });
 
-  
 
     return (
         <ModalWindowBackdrop theme='dark'>
             <Section>
                 <Container>
                     <Formik initialValues={initialValues} onSubmit={onSubmitForm} validationSchema={schema}>
-                
+                            
                         <AuthFormWrapper>
 
-                            <FormTitle>Please confirm you current password</FormTitle>
+                            <FormTitle>Now enter a new password.</FormTitle>
 
                             <FieldsList>
                                 <li>
@@ -38,15 +37,15 @@ export const ConfirmPasswordForm = ({hendleConfirmData, closeForm}) => {
                                     <ErrorMessage name="password">{msg => <ErrorContent>{msg}</ErrorContent>}</ErrorMessage>
                                 </li>
                             </FieldsList>
-                            
-                            <AuthButton type='submit' className="login-form__login-button">Confirm</AuthButton>
+                                        
+                            <AuthButton type='submit' className="login-form__login-button">Change password</AuthButton>
                             <CancelButton type="button" onClick={closeForm}>Exit</CancelButton>
 
                         </AuthFormWrapper>
+
                     </Formik>
                 </Container>
             </Section>
-            
         </ModalWindowBackdrop>
     )
 }

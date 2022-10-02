@@ -7,7 +7,7 @@ import { setUser } from "redux/authSlice";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
-export const RegisterPage = () => {
+export default function RegisterPage () {
     
     const dispatch = useDispatch();
 

@@ -6,19 +6,13 @@ import { GiWeight } from "react-icons/gi";
 import { FcCalendar } from "react-icons/fc"
 
 export const RocketDetails = ({loaderStatus = false, dataToRender}) => {
-    console.log(dataToRender)
-    
 
     const { flickr_images, name, description, wikipedia, height_w_trunk:height, dry_mass_kg:mass, first_flight:year } = dataToRender;
 
     return (
         <>
-            {loaderStatus &&
-
-                <Loader/>
+            {loaderStatus && <Loader theme={'dark'}/>}
                 
-            }
-            
             {dataToRender.length !== 0 && 
             
             <RocketDetailsWrapper className="rocket-details__wrapper">

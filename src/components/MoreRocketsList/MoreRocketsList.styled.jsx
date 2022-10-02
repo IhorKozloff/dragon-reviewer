@@ -51,26 +51,15 @@ export const RocketsListItem = styled.li`
 export const RocketImage = styled.img`
     display: block;
     width: 100%;
-    height: 230px;
+    height: 260px;
 
-    @media screen and (min-width: 190px) {
+
+    @media screen and (min-width: 768px) {
         height: 300px;
     }
 
-    @media screen and (min-width: 260px) {
+    @media screen and (min-width: 1280px) {
         height: 350px;
-    }
-
-    @media screen and (min-width: 280px) {
-        height: 360px;
-    }
-
-    @media screen and (min-width: 768px) {
-
-    }
-
-    @media screen and (min-width: 1024px) {
-
     }
 
 `;

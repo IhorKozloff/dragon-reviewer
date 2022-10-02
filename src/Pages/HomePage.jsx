@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 
 
-export const HomePage = () => {
+export default function HomePage () {
 
  const dispatch = useDispatch();
   

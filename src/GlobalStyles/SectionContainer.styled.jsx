@@ -6,8 +6,8 @@ export const Section = styled.section`
     background-repeat: no-repeat;
     backgroun-size: cover;
     //background-color: var(--background-light-grey);
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 `;
 
 export const Container = styled.div`

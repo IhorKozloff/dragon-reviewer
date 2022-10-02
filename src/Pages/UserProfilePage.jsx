@@ -1,7 +1,7 @@
 import { Section, Container } from "GlobalStyles";
 import { UsersPersonalData } from "components";
 
-export const UserProfilePage = () => {
+export default function UserProfilePage () {
 
 
     return (

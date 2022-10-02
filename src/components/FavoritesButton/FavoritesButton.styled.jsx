@@ -73,12 +73,14 @@ export const UnAuthrizedTooltip = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    
+    font-family: var(--secondaryFont);
     
     color: white;
     background-color: #4A56E2;
     
-    
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+    }
 
     
 `

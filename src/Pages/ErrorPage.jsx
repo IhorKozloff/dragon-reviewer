@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {Section, Container} from "GlobalStyles";
-export const ErrorPage = () => {
+export default function ErrorPage () {
 
 
 
