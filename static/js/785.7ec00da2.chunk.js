@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdragon_reviewer=self.webpackChunkdragon_reviewer||[]).push([[785],{5785:function(e,r,n){n.r(r),n.d(r,{default:function(){return i}});var s=n(1480),a=n(1560),c=n(184);function i(){return(0,c.jsx)(s.$0,{className:"favorites",children:(0,c.jsx)(s.W2,{className:"favorites__container",children:(0,c.jsx)(a.lL,{})})})}}}]);
-//# sourceMappingURL=785.7ec00da2.chunk.js.map
