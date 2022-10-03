@@ -10,6 +10,18 @@ import thanos from "assets/avatar-set/thanos-min.jpg";
 import thor from "assets/avatar-set/thor-min.jpg";
 import winterSoldier from "assets/avatar-set/winter-soldier-min.jpg";
 
+import deadpool from "assets/avatar-set/deadpool-min.jpg";
+import homora from "assets/avatar-set/homora-min.jpg";
+import nebula from "assets/avatar-set/nebula-min.jpg";
+
+import spiderMan from "assets/avatar-set/spider-man-min.jpg";
+import drax from "assets/avatar-set/Drax-min.jpg";
+import groot from "assets/avatar-set/Groot-min.jpg";
+
+import proximaMidnight from "assets/avatar-set/Proxima-Midnight-min.jpg";
+import rocketRaccoon from "assets/avatar-set/Rocket-Raccoon-min.jpg";
+import scarletWitch from "assets/avatar-set/Scarlet-Witch-min.jpg";
+
 export const avatarsData = 
     [
         {name: "Black Widow", link: blackWidow, id: "1111111111"},
@@ -22,7 +34,21 @@ export const avatarsData =
     
         {name: "Thanos", link: thanos, id: "7777777777"},
         {name: "Thor", link: thor, id: "8888888888"},
-        {name: "Winter Soldier", link: winterSoldier, id: "9999999999"}
+        {name: "Winter Soldier", link: winterSoldier, id: "9999999999"},
+
+        {name: "Deadpool", link: deadpool, id: "a111111111"},
+        {name: "Homora", link: homora, id: "a222222222"},
+        {name: "Nebula", link: nebula, id: "a333333333"},
+
+        {name: "Spider-man", link: spiderMan, id: "a444444444"},
+        {name: "Drax", link: drax, id: "a555555555"},
+        {name: "Groot", link: groot, id: "a666666666"},
+
+        {name: "Proxima Midnight", link: proximaMidnight, id: "a777777777"},
+        {name: "Rocket Raccoon", link: rocketRaccoon, id: "a888888888"},
+        {name: "Scarlet Witch", link: scarletWitch, id: "a999999999"},
+
+
     ]
 
 

@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: white;
+        background-color: var(--white);
         border-radius: 10px;
         padding: 5px;
     }

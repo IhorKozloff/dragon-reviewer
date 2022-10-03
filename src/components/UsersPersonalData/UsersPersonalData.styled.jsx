@@ -11,7 +11,7 @@ export const PersonalWrapper = styled.div`
 export const PersonalBar = styled.div`
     width: 100%;
     @media screen and (min-width: 768px) {
-        border-right: 2px solid black;
+        border-right: 2px solid var(--black);
         padding-right: 20px;
         width: 40%;
 
@@ -32,18 +32,17 @@ display: none;
 
 `;
 export const ChangeEmailFormWrapper = styled.div`
-    border: 1px solid black;
+    border: 1px solid var(--black);
     width: 100%;
+
     @media screen and (min-width: 768px) {
         width: 320px;
     }
   
 `;
 export const ChangeButton = styled.button`
-
     width: 100%;
     height: 50px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +64,7 @@ export const ChangeButton = styled.button`
     outline-offset: 0px;
     text-shadow: none;
     transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    
     &:hover {
         box-shadow: inset 0 0 20px #BFE2FF;
         outline-color: rgba(255, 255, 255, 0);
@@ -109,19 +109,7 @@ export const AvatarWrapper = styled.div`
         height: 100%;
         object-fit: cover;
     }
-    &:hover {
-        &::after {
-            content: 'change avatar';
-            
-            width: 100px;
-            height: 30px;
-            background-color: green;
-            position: absolute;
-            bot: 0;
-            left: 53px;
-            border-radius: 5px;
-        }
-    }
+
    
 `;
 export const ButtonSet = styled.ul`

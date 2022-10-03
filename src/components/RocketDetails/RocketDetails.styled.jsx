@@ -11,7 +11,7 @@ export const RocketDetailsWrapper = styled.div`
     
 
     & p {
-        color: black;
+        color: var(--black);
     }
     
     @media screen and (min-width: 768px) {

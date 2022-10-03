@@ -38,7 +38,7 @@ export const DesctopPlug = styled.div`
 
 `
 export const FavoriteListItem = styled.li`
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 10px;
     padding: 10px;
 
@@ -66,9 +66,10 @@ export const FavoriteLink = styled(Link)`
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    color: black;
+    color: var(--black);
+
     &:hover {
-        color: black;
+        color: var(--black);
     }
     
 `;
@@ -79,12 +80,12 @@ export const FavoriteImage = styled.img`
     object-fit: cover;
 `;
 export const FavoriteDescription = styled.div`
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 10px;
     padding: 5px;
     width: 38%;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--white);
     background-image: url("${mainItemsTabletWallpaper}"), url("${hatch}");
     background-repeat: no-repeat;
     background-position: top 140px right -220px, top 22px left 5px;
@@ -148,7 +149,7 @@ export const RemoveButton = styled.button`
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--white);
 
     color: grey;
     display: flex;

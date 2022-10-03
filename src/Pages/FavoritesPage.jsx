@@ -9,8 +9,8 @@ export default function FavoritesPage () {
     const dataToRender = moreRocketsData.filter(item => favIds.includes(item.id));
 
     return (
-        <Section className="favorites">
-            <Container className="favorites__container">
+        <Section className="favorites" style={{minHeight: "100vh"}}>
+            <Container className="favorites__container" >
                 <FavoriteList data={dataToRender}/>
             </Container>
         </Section>

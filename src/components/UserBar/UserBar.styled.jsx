@@ -18,7 +18,7 @@ export const LogOutButton = styled.button`
     }
     &:hover {
         & svg {
-            fill: black;
+            fill: var(--black);
         }
     }
 `;
@@ -31,7 +31,7 @@ export const UserEmail = styled.div`
 
     &:hover {
         & a {
-            color: black;
+            color: var(--black);
         }
         & svg {
            opacity: 0.8;
@@ -48,6 +48,7 @@ export const UserEmail = styled.div`
         width: 30px;
         height: 30px;
         color: green;
+        margin-right: 10px;
     }
 `
 export const WishlistLinkWrapper = styled.div`
@@ -84,7 +85,7 @@ export const WishlistCount = styled.div`
     height: 12px;
     border-radius: 50%;
     background-color: red;
-    color: white;
+    color: var(--white);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -93,11 +94,12 @@ export const WishlistCount = styled.div`
     font-weight: var(--bold);
 `;
 export const UserAvatar = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
+    
     & img {
         display: block;
         height: 100%;

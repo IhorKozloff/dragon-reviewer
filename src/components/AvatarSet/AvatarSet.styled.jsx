@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const AvatarList = styled.ul`
-    background-color: white;
+    background-color: var(--white);
     display: flex;
     flex-flow: row wrap;
     padding: 40px 20px 20px 20px;
@@ -13,11 +13,9 @@ export const AvatarList = styled.ul`
     position: relative;
 
     @media screen and (min-width: 768px) {
-        width: 420px;
+        width: 700px;
     }
-    @media screen and (min-width: 1280px) {
-        width: 800px;
-    }
+
 `;
 export const AvatarListItem = styled.li`
     border-radius: 50%;
@@ -43,10 +41,11 @@ export const AvatarImgThumb = styled.div`
         width: 100px;
         height: 100px;
     }
-    @media screen and (min-width: 1280px) {
-        width: 200px;
-        height: 200px;
+    @media screen and (min-width: 768px) {
+        width: 120px;
+        height: 120px;
     }
+
 `
 
 export const CloseButton = styled.button`

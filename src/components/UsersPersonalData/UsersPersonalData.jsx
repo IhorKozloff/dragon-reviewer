@@ -127,18 +127,20 @@ export const UsersPersonalData = () => {
             
             
             <ButtonSet className="button-set"> 
+                
                 <li>
 
-                    {avatarId === '' && <ChangeButton type="button" className="button-set__set-avatar" onClick={() => {
-                        setAvatarSetStatus(true);
-                    }}>Change avatar</ChangeButton>}
-
-                </li>
-                <li>
-
-                {avatarId !== '' && <ChangeButton type="button" className="button-set__set-default-avatar" onClick={() => {
+                    {avatarId !== '' && <ChangeButton type="button" className="button-set__set-default-avatar" onClick={() => {
                         dispatch(setAvatar(''));
                     }}>Set default avatar</ChangeButton>}
+
+                </li>
+
+                <li>
+
+                    <ChangeButton type="button" className="button-set__set-avatar" onClick={() => {
+                        setAvatarSetStatus(true);
+                    }}>Change avatar</ChangeButton>
 
                 </li>
                 <li>

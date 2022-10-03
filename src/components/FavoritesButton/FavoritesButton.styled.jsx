@@ -21,7 +21,7 @@ export const FavoritesButtonWrapper = styled.div`
     & button {
         width: 40px;
         height: 40px;
-        background-color: white;
+        background-color: var(--white);
         border-radius: 50%;
         pointer-events:${props => props.isAuth === true ? "all" : "none"};
         border:${props => props.activeStatus === 'enabled' ? "1px solid orange" : "1px solid var(--gray)"};
@@ -75,7 +75,7 @@ export const UnAuthrizedTooltip = styled.div`
     border-radius: 20px;
     font-family: var(--secondaryFont);
     
-    color: white;
+    color: var(--white);
     background-color: #4A56E2;
     
     @media screen and (max-width: 767px) {

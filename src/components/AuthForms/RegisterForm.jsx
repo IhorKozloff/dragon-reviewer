@@ -36,7 +36,7 @@ export const RegisterForm = ({handleSubmit}) => {
                     </li>
                     <li>
                         <IconSVG id="form-password-icon"/>
-                        <AuthFormInput className="register-form__password" name="password" type="text" placeholder="Password"/>
+                        <AuthFormInput className="register-form__password" name="password" type="password" placeholder="Password"/>
                         <ErrorMessage name="password">{msg => <ErrorContent>{msg}</ErrorContent>}</ErrorMessage>
                     </li>
                     

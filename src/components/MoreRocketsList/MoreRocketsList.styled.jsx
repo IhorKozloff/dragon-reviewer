@@ -66,12 +66,12 @@ export const RocketImage = styled.img`
 
 export const RocketLink = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: var(--white);
     display: block;
 
     &:hover {
         cursor: pointer;
-        color: white;
+        color: var(--white);
     }
 
     
