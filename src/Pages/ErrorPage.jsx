@@ -10,8 +10,8 @@ export default function ErrorPage () {
         <Section className="error-page">
           <Container className="error-page__container">
             <div style={{height: "100vh", padding: "60px", textAlign: "center"}}>
-                Oops! something wrong... :(
-                <Link to={"/"} style={{marginLeft: "10px"}}>Go to home page</Link>
+                <p>Oops! something wrong.. :(</p>
+                <Link to={"/"}>Go to home page</Link>
             </div>
             
           </Container>
