@@ -7,11 +7,11 @@ export default function ErrorPage () {
 
     return (
       <>
-        <Section className="rocket-details">
-          <Container className="rocket-details__container">
-            <div style={{height: "100vh"}}>
+        <Section className="error-page">
+          <Container className="error-page__container">
+            <div style={{height: "100vh", padding: "60px", textAlign: "center"}}>
                 Oops! something wrong... :(
-                <Link to={"/"}>Go to home page</Link>
+                <Link to={"/"} style={{marginLeft: "10px"}}>Go to home page</Link>
             </div>
             
           </Container>
