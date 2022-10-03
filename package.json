@@ -2,7 +2,7 @@
   "name": "dragon-reviewer",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://ihorkozloff.github.io/dragon-reviewer",
   "dependencies": {
     "@mui/material": "^5.10.7",
     "@mui/styled-engine-sc": "^5.10.6",
