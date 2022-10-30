@@ -8,11 +8,9 @@ import Notiflix from 'notiflix';
 
 import { useNavigate } from "react-router-dom";
 
-
+import { getUserData } from "API";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-import db from "../firebase";
-import { getDocs, collection } from "firebase/firestore";
 import { setHistoryState, setAvatar } from "redux/favoritesSlice";
 
 export default function LoginPage () {
@@ -21,16 +19,14 @@ export default function LoginPage () {
     const dispatch = useDispatch();
 
     const setFavoritesHistory = async (email) => {
-    
-        const querySnapshot = await getDocs(collection(db, "usersFavorites"));
 
-        querySnapshot.forEach((doc) => {
-    
-            if (doc.data().email === email) {
-                dispatch(setAvatar(doc.data().avatar))
-                dispatch(setHistoryState(doc.data().data))
-            }
-        })
+        const res = await getUserData(email);
+
+        if (res) {
+            dispatch(setAvatar(res.avatar))
+            dispatch(setHistoryState(res.data))
+        } 
+        
     }
     
 
@@ -45,6 +41,7 @@ export default function LoginPage () {
                 id: user.uid,
                 token: user.accessToken
             }))
+
             setFavoritesHistory(user.email);
             navigate("/");
             

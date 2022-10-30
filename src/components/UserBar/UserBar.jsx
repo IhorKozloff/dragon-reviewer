@@ -12,8 +12,9 @@ import Media from 'react-media';
 
 import { useNavigate, Link } from "react-router-dom";
 
-import { doc, setDoc } from "firebase/firestore"; 
-import db from "../../firebase";
+// import { doc, setDoc } from "firebase/firestore"; 
+// import db from "../../firebase";
+import { saveUserData } from "API"
 
 import { getAvatarLinkById } from "helpers/getAvatarById";
 
@@ -26,11 +27,16 @@ export const UserBar = () => {
 
 
     const saveFavoritesHistory = async () => {
-        await setDoc(doc(db, "usersFavorites", email), {
+        await saveUserData({
             email,
             data: favIds,
             avatar: avatarId
-        });
+        })
+        // await setDoc(doc(db, "usersFavorites", email), {
+        //     email,
+        //     data: favIds,
+        //     avatar: avatarId
+        // });
     }
 
     const hendleLogOut = async () => {
