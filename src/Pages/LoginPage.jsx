@@ -22,10 +22,13 @@ export default function LoginPage () {
 
         const res = await getUserData(email);
 
-        if (res) {
+        if (Object.keys(res).length !== 0) {
             dispatch(setAvatar(res.avatar))
             dispatch(setHistoryState(res.data))
-        } 
+        }  else {
+            dispatch(setAvatar(''))
+            dispatch(setHistoryState([]))
+        }
         
     }
     

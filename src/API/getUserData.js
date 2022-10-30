@@ -10,3 +10,4 @@ export const getUserData = async (email) => {
         console.log(err)
     }
 }
+//http://localhost:3001/dragon/get?email=${email}
