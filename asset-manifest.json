@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/dragon-reviewer/static/css/main.e6c13ad2.css",
-    "main.js": "/dragon-reviewer/static/js/main.160302ba.js",
-    "static/js/562.ecf8ba91.chunk.js": "/dragon-reviewer/static/js/562.ecf8ba91.chunk.js",
+    "main.js": "/dragon-reviewer/static/js/main.28060d68.js",
+    "static/js/562.906bd722.chunk.js": "/dragon-reviewer/static/js/562.906bd722.chunk.js",
     "static/js/667.bafa0405.chunk.js": "/dragon-reviewer/static/js/667.bafa0405.chunk.js",
-    "static/js/319.e7c32d19.chunk.js": "/dragon-reviewer/static/js/319.e7c32d19.chunk.js",
+    "static/js/319.f58c9610.chunk.js": "/dragon-reviewer/static/js/319.f58c9610.chunk.js",
     "static/js/462.a967516a.chunk.js": "/dragon-reviewer/static/js/462.a967516a.chunk.js",
     "static/js/211.f0e751fa.chunk.js": "/dragon-reviewer/static/js/211.f0e751fa.chunk.js",
     "static/js/785.2535e8b0.chunk.js": "/dragon-reviewer/static/js/785.2535e8b0.chunk.js",
@@ -36,10 +36,10 @@
     "static/media/planets.png": "/dragon-reviewer/static/media/planets.5ca9c3d8a2dca041da81.png",
     "index.html": "/dragon-reviewer/index.html",
     "main.e6c13ad2.css.map": "/dragon-reviewer/static/css/main.e6c13ad2.css.map",
-    "main.160302ba.js.map": "/dragon-reviewer/static/js/main.160302ba.js.map",
-    "562.ecf8ba91.chunk.js.map": "/dragon-reviewer/static/js/562.ecf8ba91.chunk.js.map",
+    "main.28060d68.js.map": "/dragon-reviewer/static/js/main.28060d68.js.map",
+    "562.906bd722.chunk.js.map": "/dragon-reviewer/static/js/562.906bd722.chunk.js.map",
     "667.bafa0405.chunk.js.map": "/dragon-reviewer/static/js/667.bafa0405.chunk.js.map",
-    "319.e7c32d19.chunk.js.map": "/dragon-reviewer/static/js/319.e7c32d19.chunk.js.map",
+    "319.f58c9610.chunk.js.map": "/dragon-reviewer/static/js/319.f58c9610.chunk.js.map",
     "462.a967516a.chunk.js.map": "/dragon-reviewer/static/js/462.a967516a.chunk.js.map",
     "211.f0e751fa.chunk.js.map": "/dragon-reviewer/static/js/211.f0e751fa.chunk.js.map",
     "785.2535e8b0.chunk.js.map": "/dragon-reviewer/static/js/785.2535e8b0.chunk.js.map",
@@ -47,6 +47,6 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.160302ba.js"
+    "static/js/main.28060d68.js"
   ]
 }
