@@ -1,9 +1,15 @@
 import { Formik, ErrorMessage } from "formik"
 import * as yup from 'yup';
 import {  Logo } from 'components';
-import { AuthButton, RedirectButton, AuthFormWrapper, AuthFormInput, FieldsList, FormTitle, ErrorContent } from "./AuthForm.styled"
+import { AuthButton, RedirectButton, AuthFormWrapper, AuthFormInput, FieldsList, FormTitle, ErrorContent } from "./AuthForm.styled";
+import { PasswordTooltip } from "./PasswordTooltip/PasswordTooltip";
+import { PasswordSecureLableComponent } from "./PasswordSecureLable/PasswordSecureLable";
 import { IconSVG } from "helpers/IconSvg";
+import { useState } from "react";
+
 export const RegisterForm = ({handleSubmit}) => {
+
+    const [secureComponentData, setSecureComponentData] = useState(null)
 
     const initialValues = {
         email:'',
@@ -21,10 +27,13 @@ export const RegisterForm = ({handleSubmit}) => {
         email: yup.string().email().required(),
     });
 
+    const onPasswordInputChange = (event) => {
+        setSecureComponentData(event.target.value)
+    }
 
     return (
         <Formik initialValues={initialValues} onSubmit={onSubmitForm} validationSchema={schema}>
-            
+            {({handleChange}) => (
             <AuthFormWrapper className='register-form'>
                 <Logo/>
                 <FormTitle>Register to get more features</FormTitle>
@@ -36,8 +45,15 @@ export const RegisterForm = ({handleSubmit}) => {
                     </li>
                     <li>
                         <IconSVG id="form-password-icon"/>
-                        <AuthFormInput className="register-form__password" name="password" type="password" placeholder="Password"/>
+                        <AuthFormInput className="register-form__password" name="password" type="password" placeholder="Password"  onChange={(e) => {
+                                handleChange(e);
+                                onPasswordInputChange(e)
+                            }}/>
                         <ErrorMessage name="password">{msg => <ErrorContent>{msg}</ErrorContent>}</ErrorMessage>
+
+                        <PasswordTooltip/>
+                       { secureComponentData !== null && secureComponentData !== "" && <PasswordSecureLableComponent data={secureComponentData}/>}
+                        {/*Воот сюда тултипку*/}
                     </li>
                     
                     <li>
@@ -53,6 +69,7 @@ export const RegisterForm = ({handleSubmit}) => {
 
                         
             </AuthFormWrapper>
+            )}
         </Formik>
     )
 }
