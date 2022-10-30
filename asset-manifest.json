@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dragon-reviewer/static/css/main.e6c13ad2.css",
-    "main.js": "/dragon-reviewer/static/js/main.2b4db234.js",
-    "static/js/562.906bd722.chunk.js": "/dragon-reviewer/static/js/562.906bd722.chunk.js",
-    "static/js/667.bafa0405.chunk.js": "/dragon-reviewer/static/js/667.bafa0405.chunk.js",
-    "static/js/319.bfdaa17a.chunk.js": "/dragon-reviewer/static/js/319.bfdaa17a.chunk.js",
-    "static/js/462.a967516a.chunk.js": "/dragon-reviewer/static/js/462.a967516a.chunk.js",
-    "static/js/211.f0e751fa.chunk.js": "/dragon-reviewer/static/js/211.f0e751fa.chunk.js",
-    "static/js/785.2535e8b0.chunk.js": "/dragon-reviewer/static/js/785.2535e8b0.chunk.js",
+    "main.js": "/dragon-reviewer/static/js/main.28a65958.js",
+    "static/js/562.a3c59bd0.chunk.js": "/dragon-reviewer/static/js/562.a3c59bd0.chunk.js",
+    "static/js/667.57d565e4.chunk.js": "/dragon-reviewer/static/js/667.57d565e4.chunk.js",
+    "static/js/319.b333cd8a.chunk.js": "/dragon-reviewer/static/js/319.b333cd8a.chunk.js",
+    "static/js/462.bc6f3faa.chunk.js": "/dragon-reviewer/static/js/462.bc6f3faa.chunk.js",
+    "static/js/211.6d3c0fe1.chunk.js": "/dragon-reviewer/static/js/211.6d3c0fe1.chunk.js",
+    "static/js/785.f6026fec.chunk.js": "/dragon-reviewer/static/js/785.f6026fec.chunk.js",
     "static/js/733.00be1488.chunk.js": "/dragon-reviewer/static/js/733.00be1488.chunk.js",
     "static/media/20945760.jpg": "/dragon-reviewer/static/media/20945760.b6109434f516b1319246.jpg",
     "static/media/main-them-wallpaper.jpg": "/dragon-reviewer/static/media/main-them-wallpaper.a33836a68c71f9619c6f.jpg",
@@ -36,17 +36,17 @@
     "static/media/planets.png": "/dragon-reviewer/static/media/planets.5ca9c3d8a2dca041da81.png",
     "index.html": "/dragon-reviewer/index.html",
     "main.e6c13ad2.css.map": "/dragon-reviewer/static/css/main.e6c13ad2.css.map",
-    "main.2b4db234.js.map": "/dragon-reviewer/static/js/main.2b4db234.js.map",
-    "562.906bd722.chunk.js.map": "/dragon-reviewer/static/js/562.906bd722.chunk.js.map",
-    "667.bafa0405.chunk.js.map": "/dragon-reviewer/static/js/667.bafa0405.chunk.js.map",
-    "319.bfdaa17a.chunk.js.map": "/dragon-reviewer/static/js/319.bfdaa17a.chunk.js.map",
-    "462.a967516a.chunk.js.map": "/dragon-reviewer/static/js/462.a967516a.chunk.js.map",
-    "211.f0e751fa.chunk.js.map": "/dragon-reviewer/static/js/211.f0e751fa.chunk.js.map",
-    "785.2535e8b0.chunk.js.map": "/dragon-reviewer/static/js/785.2535e8b0.chunk.js.map",
+    "main.28a65958.js.map": "/dragon-reviewer/static/js/main.28a65958.js.map",
+    "562.a3c59bd0.chunk.js.map": "/dragon-reviewer/static/js/562.a3c59bd0.chunk.js.map",
+    "667.57d565e4.chunk.js.map": "/dragon-reviewer/static/js/667.57d565e4.chunk.js.map",
+    "319.b333cd8a.chunk.js.map": "/dragon-reviewer/static/js/319.b333cd8a.chunk.js.map",
+    "462.bc6f3faa.chunk.js.map": "/dragon-reviewer/static/js/462.bc6f3faa.chunk.js.map",
+    "211.6d3c0fe1.chunk.js.map": "/dragon-reviewer/static/js/211.6d3c0fe1.chunk.js.map",
+    "785.f6026fec.chunk.js.map": "/dragon-reviewer/static/js/785.f6026fec.chunk.js.map",
     "733.00be1488.chunk.js.map": "/dragon-reviewer/static/js/733.00be1488.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2b4db234.js"
+    "static/js/main.28a65958.js"
   ]
 }
